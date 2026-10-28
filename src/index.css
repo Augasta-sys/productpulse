@@ -1,0 +1,385 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+:root {
+  --page-bg: #faf7f3;
+  --surface: #ffffff;
+  --surface-hover: #f5eee8;
+  --text-primary: #542f1e;
+  --text-secondary: #8b7668;
+  --border-color: #eadfd5;
+  --accent: #7c452a;
+  --accent-hover: #65371f;
+  --focus-color: #b87950;
+
+  --chart-grid: #eadfd5;
+  --chart-muted: #8b7668;
+  --chart-text: #542f1e;
+  --chart-tooltip: #ffffff;
+
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  --page-bg: #0b0d0f;
+  --surface: #151a1c;
+  --surface-hover: #202628;
+  --text-primary: #f4f6f0;
+  --text-secondary: #a5b0ab;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent: #e5f55b;
+  --accent-hover: #f0ff7a;
+  --focus-color: #e5f55b;
+
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --chart-muted: #a5b0ab;
+  --chart-text: #f4f6f0;
+  --chart-tooltip: #191e20;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #c5a58e transparent;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+button,
+input,
+textarea,
+select {
+  min-width: 0;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgb(124 69 42 / 25%);
+}
+
+/* Sidebar scrolls normally, but its scrollbar is hidden */
+.sidebar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar while keeping popup scrolling enabled */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+/* ========================================
+   VISIBLE SCROLLBARS
+======================================== */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #c5a58e;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9b7458;
+  background-clip: padding-box;
+}
+
+.dark {
+  scrollbar-color: #56605b transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #56605b;
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #e5f55b;
+  background-clip: padding-box;
+}
+
+/* ========================================
+   AUTHENTICATION PAGES
+======================================== */
+
+.auth-screen {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+.auth-content,
+.auth-content > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.auth-content h1 {
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.auth-content h2 {
+  line-height: 1.25;
+}
+
+.auth-content input,
+.auth-content select {
+  max-width: 100%;
+}
+
+.auth-content button[type="submit"] {
+  min-height: 38px;
+}
+
+.auth-form-compact {
+  width: 100%;
+  min-width: 0;
+}
+
+.auth-form-compact label {
+  display: block;
+  line-height: 1.25;
+}
+
+.auth-form-compact .auth-input {
+  min-height: 38px;
+}
+
+.auth-form-compact .auth-submit {
+  min-height: 40px;
+}
+
+/* ========================================
+   PRODUCTPULSE DASHBOARD
+======================================== */
+
+.dashboard-theme {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  overflow-y: visible;
+
+  --chart-grid: #eadfd5;
+  --chart-muted: #8b7668;
+  --chart-text: #542f1e;
+  --chart-tooltip: #ffffff;
+}
+
+.dark .dashboard-theme {
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --chart-muted: #a5b0ab;
+  --chart-text: #f4f6f0;
+  --chart-tooltip: #191e20;
+}
+
+/* Recharts labels and grid lines */
+.dashboard-theme .recharts-cartesian-axis-tick-value {
+  fill: var(--chart-muted);
+}
+
+.dashboard-theme .recharts-cartesian-grid line {
+  stroke: var(--chart-grid);
+}
+
+.dashboard-theme .recharts-tooltip-wrapper {
+  outline: none;
+}
+
+/* Sidebar can scroll if navigation exceeds the viewport */
+.dashboard-theme aside {
+  max-height: 100vh;
+  max-height: 100dvh;
+}
+
+.dashboard-theme aside nav {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Wide tables scroll inside their own container */
+.dashboard-theme .overflow-x-auto {
+  max-width: 100%;
+  overscroll-behavior-x: contain;
+}
+
+/* ========================================
+   HOVER AND KEYBOARD ACCESSIBILITY
+======================================== */
+
+.dashboard-theme button:focus-visible,
+.dashboard-theme a:focus-visible,
+.dashboard-theme input:focus-visible,
+.dashboard-theme select:focus-visible,
+.dashboard-theme textarea:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 3px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a18a79;
+  opacity: 1;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #77827c;
+}
+
+/* ========================================
+   RESPONSIVE AUTH LAYOUT
+======================================== */
+
+@media (max-width: 767px) {
+  .auth-content h1 {
+    font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+  }
+
+  .auth-form-compact .auth-input {
+    min-height: 36px;
+  }
+
+  .auth-form-compact .auth-submit {
+    min-height: 38px;
+  }
+}
+
+@media (max-height: 750px) {
+  .auth-content h1 {
+    margin-top: 0.15rem;
+    margin-bottom: 0.25rem;
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+  }
+
+  .auth-content p {
+    line-height: 1.35;
+  }
+
+  .auth-form-compact .auth-input {
+    min-height: 33px;
+  }
+
+  .auth-form-compact .auth-submit {
+    min-height: 35px;
+  }
+}
+
+@media (max-height: 600px) {
+  .auth-form-compact .auth-input {
+    min-height: 30px;
+  }
+
+  .auth-form-compact .auth-submit {
+    min-height: 32px;
+  }
+}
+
+@media (max-width: 374px) {
+  .auth-content {
+    font-size: 0.875rem;
+  }
+
+  .auth-content h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "users": [
+    {
+      "id": "user-1",
+      "name": "Alex Morgan",
+      "email": "owner@productpulse.demo",
+      "password": "Demo123!",
+      "status": "active"
+    },
+    {
+      "id": "user-2",
+      "name": "Jamie Lee",
+      "email": "manager@productpulse.demo",
+      "password": "Demo123!",
+      "status": "active"
+    },
+    {
+      "id": "user-3",
+      "name": "Taylor Smith",
+      "email": "customer@productpulse.demo",
+      "password": "Demo123!",
+      "status": "active"
+    },
+    {
+      "id": "user-4",
+      "name": "Jordan Davis",
+      "email": "admin@productpulse.demo",
+      "password": "Demo123!",
+      "status": "active"
+    },
+    {
+      "id": "3CTWEgu4jjc",
+      "name": "Preethi",
+      "email": "preethi@productpulse.demo",
+      "password": "Demo123!",
+      "status": "active"
+    }
+  ],
+  "workspaces": [
+    {
+      "id": "workspace-1",
+      "name": "Acme Products",
+      "description": "Our customer feedback and product roadmap",
+      "logoUrl": "",
+      "brandColor": "#6366f1",
+      "publicRoadmapEnabled": true
+    }
+  ],
+  "workspaceMembers": [
+    {
+      "id": "member-1",
+      "workspaceId": "workspace-1",
+      "userId": "user-1",
+      "role": "owner",
+      "status": "active"
+    },
+    {
+      "id": "member-2",
+      "workspaceId": "workspace-1",
+      "userId": "user-2",
+      "role": "product_manager",
+      "status": "active"
+    },
+    {
+      "id": "member-3",
+      "workspaceId": "workspace-1",
+      "userId": "user-4",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": "member-4",
+      "workspaceId": "workspace-1",
+      "userId": "user-3",
+      "role": "customer",
+      "status": "active"
+    },
+    {
+      "id": "Vj7JJ84I9ys",
+      "workspaceId": "workspace-1793178167117",
+      "userId": "user-1793178167117",
+      "role": "owner",
+      "status": "active"
+    },
+    {
+      "id": "rFKl4IUwGpI",
+      "userId": "3CTWEgu4jjc",
+      "workspaceId": "workspace-1",
+      "role": "customer",
+      "status": "active"
+    }
+  ],
+  "categories": [
+    {
+      "id": "category-1",
+      "workspaceId": "workspace-1",
+      "name": "Feature Request",
+      "color": "#8B83C9"
+    },
+    {
+      "id": "category-2",
+      "workspaceId": "workspace-1",
+      "name": "Bug Report",
+      "color": "#D17C80"
+    },
+    {
+      "id": "category-3",
+      "workspaceId": "workspace-1",
+      "name": "Improvement",
+      "color": "#6F9E80"
+    },
+    {
+      "id": "category-4",
+      "workspaceId": "workspace-1",
+      "name": "UI/UX",
+      "color": "#D6A77A"
+    },
+    {
+      "id": "category-5",
+      "workspaceId": "workspace-1",
+      "name": "Other",
+      "color": "#A9653A"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Design",
+      "color": "#0891b2",
+      "workspaceId": "workspace-1",
+      "categoryId": "category-4",
+      "id": "MoTb733KD2k"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "feedback-1",
+      "workspaceId": "workspace-1",
+      "title": "Add dark mode",
+      "description": "Allow users to switch themes",
+      "status": "Under Review"
+    }
+  ],
+  "votes": [],
+  "comments": [],
+  "roadmapItems": [
+    {
+      "id": "roadmap-1",
+      "workspaceId": "workspace-1",
+      "title": "Add dark mode",
+      "description": "Allow users to switch themes",
+      "status": "planned",
+      "priority": "high",
+      "targetDate": "2026-12-15",
+      "feedbackIds": [
+        "feedback-1"
+      ]
+    },
+    {
+      "title": "Light mode",
+      "description": "",
+      "status": "in-progress",
+      "priority": "medium",
+      "targetDate": "2026-10-28",
+      "workspaceId": "workspace-1",
+      "feedbackIds": [],
+      "id": "nZxx48RRnl8"
+    }
+  ],
+  "releaseNotes": [],
+  "subscriptionPlans": [
+    {
+      "id": "free",
+      "name": "Free",
+      "maxMembers": 5,
+      "maxFeedback": 100,
+      "maxRoadmapItems": 10
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "maxMembers": 50,
+      "maxFeedback": 5000,
+      "maxRoadmapItems": 500
+    }
+  ],
+  "workspaceSubscriptions": [
+    {
+      "id": "Or5-paEvCJM",
+      "workspaceId": "workspace-1",
+      "planId": "free",
+      "plan": "Free",
+      "interval": "monthly",
+      "status": "active",
+      "startDate": "2026-10-27",
+      "renewalDate": "2026-11-27",
+      "amount": 0,
+      "currency": "USD"
+    }
+  ],
+  "activityLogs": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
